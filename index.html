@@ -1,0 +1,168 @@
+export default function ZynixGPTApp() { const messages = [ { sender: 'AI', text: 'Hello 👋 I am ZynixGPT. How can I help you today?' }, { sender: 'User', text: 'Help me write a professional resume.' }, { sender: 'AI', text: 'Sure. Tell me your work experience and the type of job you want.' } ];
+
+return ( <div className="min-h-screen bg-black text-white flex flex-col"> {/* Header */} <header className="flex items-center justify-between px-6 py-4 border-b border-zinc-800"> <div> <h1 className="text-2xl font-bold">ZynixGPT</h1> <p className="text-sm text-zinc-400">AI Assistant for Everyday Tasks</p> </div>
+
+<button className="bg-white text-black px-4 py-2 rounded-2xl font-medium hover:opacity-90 transition">
+      Upgrade
+    </button>
+  </header>
+
+  {/* Chat Area */}
+  <main className="flex-1 overflow-y-auto px-4 py-6 space-y-4">
+    {messages.map((msg, index) => (
+      <div
+        key={index}
+        className={`max-w-[80%] p-4 rounded-3xl shadow-lg ${
+          msg.sender === 'User'
+            ? 'ml-auto bg-white text-black'
+            : 'bg-zinc-900 text-white'
+        }`}
+      >
+        <p className="text-xs mb-2 opacity-70">{msg.sender}</p>
+        <p>{msg.text}</p>
+      </div>
+    ))}
+  </main>
+
+  {/* Input Area */}
+  <footer className="p-4 border-t border-zinc-800 bg-black">
+    <div className="flex gap-3">
+      <input
+        type="text"
+        placeholder="Ask ZynixGPT anything..."
+        className="flex-1 bg-zinc-900 rounded-2xl px-4 py-3 outline-none"
+      />
+
+      <button className="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:opacity-90 transition">
+        Send
+      </button>
+    </div>
+  </footer>
+</div>
+
+); }
+
+/*
+
+ZYNIXGPT DEVELOPMENT ROADMAP
+
+PHASE 1 — MVP (Minimum Viable Product)
+
+Goal: Build a simple AI chatbot app.
+
+Features:
+
+User chat interface
+
+AI response system
+
+Chat history
+
+Dark mode
+
+User authentication
+
+
+Recommended Tools:
+
+Frontend: React Native or Flutter
+
+Backend: Node.js
+
+Database: Firebase or Supabase
+
+AI API: OpenAI API
+
+
+========================================
+
+PHASE 2 — SMART FEATURES
+
+Add:
+
+Voice chat
+
+AI image generation
+
+PDF upload
+
+Resume builder
+
+Translation tools
+
+Multiple AI personalities
+
+
+========================================
+
+PHASE 3 — MONETIZATION
+
+Ways to make money:
+
+Subscription plans
+
+Ads
+
+Premium AI tools
+
+API access
+
+Business version
+
+
+========================================
+
+PHASE 4 — PUBLISHING
+
+Platforms:
+
+Google Play Store
+
+Apple App Store
+
+Web version
+
+
+========================================
+
+IMPORTANT NEXT STEPS
+
+1. Create your logo
+
+
+2. Register domain name
+
+
+3. Create GitHub account
+
+
+4. Learn React Native or Flutter
+
+
+5. Connect OpenAI API
+
+
+6. Build Android version first
+
+
+
+========================================
+
+SUGGESTED COLORS
+
+Primary: Black Secondary: White Accent: Electric Blue
+
+========================================
+
+SLOGAN IDEAS
+
+Smart AI for Smart People
+
+The Future of AI Assistance
+
+Your Personal AI Companion
+
+Ask Anything. Learn Everything.
+
+
+*/
