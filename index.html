@@ -166,3 +166,30 @@ Ask Anything. Learn Everything.
 
 
 */
+<script>
+  const input = document.querySelector("input");
+  const button = document.querySelector("button");
+  const chat = document.querySelector(".chat");
+
+  function sendMessage() {
+    const text = input.value;
+    if (text.trim() === "") return;
+
+    // User message
+    const userMsg = document.createElement("p");
+    userMsg.innerText = "You: " + text;
+    chat.appendChild(userMsg);
+
+    // Clear input
+    input.value = "";
+
+    // AI fake reply
+    setTimeout(() => {
+      const aiMsg = document.createElement("p");
+      aiMsg.innerText = "ZynixGPT: I am still learning, but I will get smarter soon 🤖";
+      chat.appendChild(aiMsg);
+    }, 1000);
+  }
+
+  button.addEventListener("click", sendMessage);
+</script>
